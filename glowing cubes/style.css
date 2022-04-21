@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: rgb(14, 255, 6);
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    margin:20px;
+}
+.logo h1{
+    color: whitesmoke;
+    text-decoration: underline;
+}
+span{
+    color: black;
+}
+nav{
+    margin: 0 20px;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+}
+nav ul{
+    margin: 28px;
+}
+nav li{
+    display: inline;
+}
+nav li:not(:last-child){
+    margin-right: 1.5rem;
+}
+section{
+    background: black;
+    height: 100vh;
+    width: 100%;
+    font-family: sans-serif;
+}
+.cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10rem;
+}
+.cube{
+    height: 300px;
+    width: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: animate 20s linear infinite;
+}
+@keyframes animate {
+    0%{
+        transform: rotateX(-30deg) rotateY(0);
+    }
+    100%{
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+}
+.cube div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform-style: inherit;
+}
+.cube div span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border: 2px solid rgb(14, 255, 6);
+    transform:rotateY(calc(90deg * var(--i))) translateZ(150px );
+}
+.content{
+    margin-top: -10rem;
+    text-align: center;
+}
+.main{
+    color: whitesmoke;
+    font-size: xx-large;
+}
+#spn{
+    color: rgb(14, 255, 6);
+    text-decoration: underline;
+}
+.sub{
+    color: whitesmoke;
+    text-align: center;
+    padding-top: 5px;
+}
+.top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border: 2px solid rgb(14, 255, 6);
+    transform:rotatex(90deg) translateZ(150px );
+}
+.top::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border: 2px solid rgb(14, 255, 6);
+    background: radial-gradient(#000,#000 10%,rgb(14, 255, 6));
+    transform:translateZ(-400px);
+    filter: blur(5px);
+    box-shadow: 0 0 120px rgb(7, 121, 3),
+    0 0 120px rgb(8, 161, 2),
+    0 0 120px rgb(8, 165, 3),
+    0 0 120px rgb(11, 218, 4),
+    0 0 120px rgb(14, 255, 6);
+}
+
